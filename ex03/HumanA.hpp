@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/05/05 14:16:08 by rothiery          #+#    #+#             */
+/*   Updated: 2025/05/05 15:04:27 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-int	main()
+#include "Weapon.hpp"
+
+class HumanA
 {
-	Zombie	*test;
+	public:
+		HumanA(std::string &name, Weapon &type);
+		void	attack();
 
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
-}
+	private:
+		Weapon		&_weapon;
+		std::string	&_name;
+};
+
+#endif

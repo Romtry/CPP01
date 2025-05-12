@@ -5,19 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/04/30 14:36:15 by rothiery          #+#    #+#             */
+/*   Updated: 2025/05/05 08:57:56 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "iostream"
 
 int	main()
 {
-	Zombie	*test;
-
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
+	std::string	str = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &str;
+	std::string	&stringREF = str;
+	std::cout << &str << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+	std::cout << str << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 }

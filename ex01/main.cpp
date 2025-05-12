@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/04/30 12:33:26 by rothiery          #+#    #+#             */
+/*   Updated: 2025/04/30 14:35:02 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int	main()
 {
-	Zombie	*test;
+	Zombie *z;
 
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
+	z = zombieHorde(9, "42");
+	for (int i = 0; i < 9; i++)
+		z[i].announce();
+	delete[] z;
+	return (0);
 }

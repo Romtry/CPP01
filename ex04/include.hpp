@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   include.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/05/07 09:46:48 by rothiery          #+#    #+#             */
+/*   Updated: 2025/05/12 10:57:44 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef INCLUDE_HPP
+# define INCLUDE_HPP
 
-int	main()
-{
-	Zombie	*test;
+#include <iostream>
+#include <fstream>
+#include <cstring>
 
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
-}
+std::string	extract(char *&s1, char *&s2, std::ifstream &infile);
+
+#endif

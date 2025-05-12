@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   path.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/05/07 15:11:35 by rothiery          #+#    #+#             */
+/*   Updated: 2025/05/12 10:59:08 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "include.hpp"
 
-int	main()
+std::string	extract(char *&s1, char *&s2, std::ifstream &infile)
 {
-	Zombie	*test;
+	std::string		line;
+	unsigned int	i;
+	std::string		str;
 
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
+	while (infile >> line)
+	{
+		while (line.find(s1) != std::string::npos)
+		{
+			i = line.find(s1);
+			line.erase(i, std::strlen(s1));
+			line.insert(i, s2);
+		}
+		str += line;
+	}
+	return (str);
 }

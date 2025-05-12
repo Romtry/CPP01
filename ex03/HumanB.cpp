@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/05/05 14:19:11 by rothiery          #+#    #+#             */
+/*   Updated: 2025/05/05 15:29:02 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-int	main()
+HumanB::HumanB(std::string &name)
+	:	_name(name)
+{}
+
+void	HumanB::setWeapon(Weapon &type)
 {
-	Zombie	*test;
+	_weapon = &type;
+}
 
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
+void	HumanB::attack()
+{
+	std::cout << this->_name << " attacks with their " << (*_weapon).getType() << std::endl;
 }

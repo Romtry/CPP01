@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 13:53:05 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 09:20:04 by rothiery         ###   ########.fr       */
+/*   Created: 2025/05/05 08:59:16 by rothiery          #+#    #+#             */
+/*   Updated: 2025/05/05 15:13:24 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int	main()
+#include <iostream>
+
+class Weapon
 {
-	Zombie	*test;
+	public:
+		Weapon(std::string &type);
+		const std::string	&getType();
+		void		setType(std::string newtype);
 
-	test = newZombie("toto");
-	test->annonce();
-	randomChump("tata");
-	delete(test);
-}
+	private:
+		std::string	&_type;
+};
+
+#endif
