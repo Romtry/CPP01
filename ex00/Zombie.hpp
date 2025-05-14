@@ -6,7 +6,7 @@
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:53:11 by rothiery          #+#    #+#             */
-/*   Updated: 2025/04/30 12:54:42 by rothiery         ###   ########.fr       */
+/*   Updated: 2025/05/14 11:31:27 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class Zombie
 {
 	public:
-	void	announce();
-	void	setname(std::string);
-	~Zombie();
+		void			announce();
+		Zombie(std::string name);
+		~Zombie();
 
 	private:
-	std::string		name;
+		std::string		name;
 };
 
 Zombie	*newZombie(std::string name);

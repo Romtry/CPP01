@@ -1,8 +1,8 @@
-NAME= a.out
+NAME=	a.out
 
 VPATH=
 
-SRC=	main.cpp\
+SRC=	main.cpp	Harl.cpp\
 
 
 OFILES= ${SRC:%.cpp=obj/%.o}

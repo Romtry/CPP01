@@ -5,7 +5,7 @@ VPATH=
 SRC=	main.cpp	Weapon.cpp	HumanA.cpp	HumanB.cpp\
 
 
-OFILES= ${SRC:%.c=obj/%.o}
+OFILES= ${SRC:%.cpp=obj/%.o}
 
 CC= 	c++ -Wextra -Wall -Werror -std=c++98
 CFLAGS= -g3
@@ -24,7 +24,7 @@ DARK_RED = \033[38;5;88m
 GREEN = \033[38;5;85m
 
 #change value with number of src files !
-NBR_TOT_FICHIER = 70
+NBR_TOT_FICHIER = $(words ${SRC})
 
 FICH_COUNT = 0
 NBR_COMPILER = ${shell expr 100 \* ${FICH_COUNT} / ${NBR_TOT_FICHIER}}
@@ -37,7 +37,7 @@ ${NAME}:		${OFILES}
 	   @${CC} ${CFLAGS} ${OFILES} -o ${NAME} -lreadline -lncurses
 	@echo "\n\n${GREEN}[✓] - ${_GREEN}${NAME}${GREEN} Successfully Compiled!${RESET}"
 
-obj/%.o:%.c
+obj/%.o:%.cpp
 	@mkdir -p obj/$(dir $<)
 	@${eval FICH_COUNT = ${shell expr ${FICH_COUNT} + 1}}
 	@${CC} ${CFLAGS} -c $< -o $@
