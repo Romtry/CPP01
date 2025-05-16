@@ -6,7 +6,7 @@
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 09:46:48 by rothiery          #+#    #+#             */
-/*   Updated: 2025/05/12 10:57:44 by rothiery         ###   ########.fr       */
+/*   Updated: 2025/05/16 09:33:08 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 #include <fstream>
 #include <cstring>
 
-std::string	extract(char *&s1, char *&s2, std::ifstream &infile);
+std::string	rplace(char *&s1, char *&s2, std::ifstream &infile);
 
 #endif

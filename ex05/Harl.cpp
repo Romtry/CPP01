@@ -6,7 +6,7 @@
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 14:28:25 by rothiery          #+#    #+#             */
-/*   Updated: 2025/05/12 15:47:31 by rothiery         ###   ########.fr       */
+/*   Updated: 2025/05/16 09:45:16 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	Harl::error()
 void	Harl::complain(std::string level)
 {
 	void 		(Harl::*ptr[4])() = {&Harl::debug, &Harl::error, &Harl::info, &Harl::warning};
-	const std::string	name[4] = {"debug", "error", "info", "warning"};
+	const std::string	name[4] = {"DEBUG", "ERROR", "INFO", "WARNING"};
 
 	for (int i = 0; i < 4; i++)
 	{

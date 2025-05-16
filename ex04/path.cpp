@@ -6,13 +6,13 @@
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:11:35 by rothiery          #+#    #+#             */
-/*   Updated: 2025/05/12 10:59:08 by rothiery         ###   ########.fr       */
+/*   Updated: 2025/05/16 09:33:13 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
 
-std::string	extract(char *&s1, char *&s2, std::ifstream &infile)
+std::string	rplace(char *&s1, char *&s2, std::ifstream &infile)
 {
 	std::string		line;
 	unsigned int	i;

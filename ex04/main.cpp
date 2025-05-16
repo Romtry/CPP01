@@ -6,7 +6,7 @@
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 09:42:59 by rothiery          #+#    #+#             */
-/*   Updated: 2025/05/12 12:18:34 by rothiery         ###   ########.fr       */
+/*   Updated: 2025/05/16 09:33:03 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	replace = argv[1];
 	replace += ".replace";
 	std::ofstream outfile(replace.c_str());
-	outfile << extract(argv[2], argv[3], infile);
+	outfile << rplace(argv[2], argv[3], infile);
 	infile.close();
 	return (0);
 }

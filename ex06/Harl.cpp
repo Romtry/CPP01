@@ -6,7 +6,7 @@
 /*   By: rothiery <rothiery@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:49:25 by rothiery          #+#    #+#             */
-/*   Updated: 2025/05/14 10:19:11 by rothiery         ###   ########.fr       */
+/*   Updated: 2025/05/16 09:49:03 by rothiery         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	Harl::error()
 
 void	Harl::complain(std::string lvl)
 {
-	void 		(Harl::*ptr[4])() = {&Harl::debug, &Harl::error, &Harl::info, &Harl::warning};
-	const std::string	name[4] = {"DEBUG", "ERROR", "INFO", "WARNING"};
+	void 		(Harl::*ptr[4])() = {&Harl::error, &Harl::warning, &Harl::info, &Harl::debug};
+	const std::string	name[4] = {"ERROR", "WARNING", "INFO", "DEBUG"};
 	int					level;
 
 	level = 4;
@@ -46,19 +46,27 @@ void	Harl::complain(std::string lvl)
 	}
 	switch (level)
 	{
-	case 0:
-		(this->*ptr[level])();
-		break;
-	case 1:
-		(this->*ptr[level])();
-		break;
-	case 2:
-		(this->*ptr[level])();
-		break;
-	case 3:
-		(this->*ptr[level])();
-		break;
-	default:
-		break;
+		case 0:
+		{
+			(this->*ptr[level])();
+			level++;
+		}
+		case 1:
+		{
+			(this->*ptr[level])();
+			level++;
+		}
+		case 2:
+		{
+			(this->*ptr[level])();
+			level++;
+		}
+		case 3:
+		{
+			(this->*ptr[level])();
+			level++;
+		}
+		default:
+			break;
 	}
 }
